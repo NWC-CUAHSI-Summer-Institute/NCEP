@@ -1,2 +1,7 @@
 # NCEP
 
+## Organization
+
+Folders:
+
+`MRMS`:
