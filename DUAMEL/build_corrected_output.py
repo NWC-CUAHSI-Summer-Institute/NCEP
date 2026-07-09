@@ -3,7 +3,7 @@ Filename: route_cfe.py
 Author: Aldo Tapia
 Date: 2026-07-09
 Version: 0.1
-Description: Same than duamel, but with *.nc creation as well and multiple experiments handling
+Description: Same than duamel, but with *.nc creation as well
 """
 
 import sys
@@ -14,12 +14,12 @@ import numpy as np
 import pandas as pd
 import xarray as xr
 
-DEFAULT_RUN = Path("/Users/aldotapia/ngiab_preprocess_output/mrms-displacement/outputs")
+DEFAULT_RUN = Path("/Users/aldotapia/ngiab_preprocess_output/mrms-displacement/real_case/mrms")
 COEF_FILE = (
     "/Users/aldotapia/Documents/GitHub/NCEP/DUAMEL/routing_coefficients_study_area.csv"
 )
 OUTPUT_PATH = (
-    "/Users/aldotapia/ngiab_preprocess_output/mrms-displacement/outputs/routed"
+    "/Users/aldotapia/ngiab_preprocess_output/mrms-displacement/real_case/routed"
 )
 DT = 1.0  # routing timestep [hr]
 
