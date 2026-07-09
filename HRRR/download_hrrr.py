@@ -133,7 +133,13 @@ if "time" in ds.coords:
 out_ds = xr.Dataset(regridded_vars, coords=coords, attrs=ds.attrs)
 
 # since prate is in kg/m^2/s, multiply by 3600 to get mm/hr
-(out_ds[name] * 3600).to_netcdf(
+out_ds[name] = out_ds[name] * 3600
+out_ds[name].attrs["units"] = "mm/hr"
+out_ds[name].attrs["long_name"] = "Precipitation Rate in mm/hr, NOT IN kg/m^2/s!"
+out_ds.attrs["description"] = (
+    "Regridded HRRR data to a regular lat/lon grid using pyresample. Original data downloaded using FastHerbie."
+)
+out_ds.to_netcdf(
     f"{OUT_DIR}/hrrr_{VAR}_{re.sub(r'[^0-9]', '', DATE_FORECAST)}_{HOUR_FORECAST.replace(':', '')}.nc",
     engine="netcdf4",
 )

@@ -1,7 +1,7 @@
 [project]
 name = "ncep"
 version = "0.1.0"
-description = "UV environment for reproducing the code of NCEP project"
+description = "UV environment for reproducing the code of NCEP project. Jupyter is here just for development purposes."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
@@ -17,4 +17,5 @@ dependencies = [
     "rioxarray>=0.22.0",
     "s3fs>=2026.6.0",
     "xarray>=2026.4.0",
+    "xarray-regrid>=0.4.2",
 ]
