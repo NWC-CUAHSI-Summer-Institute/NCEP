@@ -14,12 +14,12 @@ import numpy as np
 import pandas as pd
 import xarray as xr
 
-DEFAULT_RUN = Path("/Users/aldotapia/ngiab_preprocess_output/mrms-displacement/real_case/mrms")
+DEFAULT_RUN = Path("/Users/aldotapia/ngiab_preprocess_output/mrms-2022/real_case/mrms")
 COEF_FILE = (
     "/Users/aldotapia/Documents/GitHub/NCEP/DUAMEL/routing_coefficients_study_area.csv"
 )
 OUTPUT_PATH = (
-    "/Users/aldotapia/ngiab_preprocess_output/mrms-displacement/real_case/routed"
+    "/Users/aldotapia/ngiab_preprocess_output/mrms-2022/real_case/routed"
 )
 DT = 1.0  # routing timestep [hr]
 

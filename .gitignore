@@ -182,3 +182,4 @@ cython_debug/
 
 # development of the codebase (old and unstructured files come here)
 nonorganized/
+.DS_Store
