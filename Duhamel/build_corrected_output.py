@@ -3,7 +3,7 @@ Filename: build_corrected_output.py
 Author: Aldo Tapia
 Date: 2026-07-10
 Version: 0.1
-Description: Same than duamel, but with *.nc creation as well
+Description: Same than route_cfe, but with *.nc creation as well
 """
 
 import sys
@@ -16,7 +16,7 @@ import xarray as xr
 
 DEFAULT_RUN = Path("/Users/aldotapia/ngiab_preprocess_output/mrms-displacement/real_case/mrms")
 COEF_FILE = (
-    "/Users/aldotapia/Documents/GitHub/NCEP/DUAMEL/routing_coefficients_study_area.csv"
+    "/Users/aldotapia/Documents/GitHub/NCEP/Duhamel/routing_coefficients_study_area.csv"
 )
 OUTPUT_PATH = (
     "/Users/aldotapia/ngiab_preprocess_output/mrms-displacement/real_case/routed"

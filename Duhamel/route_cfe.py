@@ -3,7 +3,7 @@ Filename: route_cfe.py
 Author: Aldo Tapia
 Date: 2026-07-09
 Version: 0.1
-Description: Duamel routing for headwater catchments using a gamma unit hydrograph.
+Description: Duhamel routing for headwater catchments using a gamma unit hydrograph.
 """
 
 import sys
@@ -15,7 +15,7 @@ import pandas as pd
 
 DT = 1.0  # timestep [hr]
 COEF = (
-    "/Users/aldotapia/Documents/GitHub/NCEP/DUAMEL/routing_coefficients_study_area.csv"
+    "/Users/aldotapia/Documents/GitHub/NCEP/Duhamel/routing_coefficients_study_area.csv"
 )
 NGEN = Path("/Users/aldotapia/ngiab_preprocess_output/mrms-displacement/outputs/ngen")
 OUTDIR = Path(
