@@ -3,7 +3,7 @@ Filename: build_corrected_output.py
 Author: Aldo Tapia
 Date: 2026-07-10
 Version: 0.1
-Description: Same than duhamel, but with *.nc creation as well
+Description: Same than duamel, but with *.nc creation as well
 """
 
 import sys
@@ -14,7 +14,7 @@ import numpy as np
 import pandas as pd
 import xarray as xr
 
-DEFAULT_RUN = Path("/Users/aldotapia/ngiab_preprocess_output/mrms-2022/real_case/mrms")
+DEFAULT_RUN = Path("/Users/aldotapia/ngiab_preprocess_output/mrms-2022/real_case/hrrr")
 COEF_FILE = (
     "/Users/aldotapia/Documents/GitHub/NCEP/Duhamel/routing_coefficients_study_area.csv"
 )

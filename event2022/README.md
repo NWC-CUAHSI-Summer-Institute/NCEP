@@ -6,7 +6,7 @@
 **Flood cause**: Heavy rain.  
 **State**: Maryland.  
 **County**: Howard.  
-**Data source (for identitying the event)**: Local Storm Report.  
+**Data source (for identifying the event)**: Local Storm Report.  
 **Report source**: Emergency Manager.  
 **Begin Date**: 2022-06-08 20:03 EST-5.  
 **Begin Location**: 0.53SSW ELLICOTT CITY.  
@@ -67,7 +67,7 @@ For running the model, Docker should be installed and running. Then, the script 
 uv run 03_zonal_stats_and_run.py
 ```
 
-## Use duamel routing to get streamflow
+## Use duhamel routing to get streamflow
 
 **One note**: streamflow here is computed in mm/hr, not in m3/s. The only reason is to easily compare different catchments. Also, the results of the `ngen` and `troute` are stores in `./real_case` folder (created in the same directory where the NGIAB are), and in a subfolder based on the name of the run.
 
@@ -75,3 +75,28 @@ uv run 03_zonal_stats_and_run.py
 uv run scripts/04_build_corrected_output.py 
 ```
 
+## Download HRRR data and inject it into the MRMS template
+
+For downloading the HRRR data:
+
+```
+uv run scripts/05_download_hrrr.py
+```
+
+It will download the HRRR data for the forecast issued at 2022-06-08 18:00 UTC, it containts 18 hours of forecast. Then, for injecting this data into the MRMS template, run:
+
+```
+uv run scripts/06_inject_hrrr.py
+```
+
+**Note**: The HRRR data is downloaded in the `./out` folder, and the injected data is stored in the `./ncep_data` folder. The data is saved as `HRRR_injected_data.nc`, but for making compatible to the NGIAB project, change the name to `conus_nextgen_filtered_v2-raw-gridded-data.nc` and replace the original forcing data in the NGIAB project.
+
+Then, for obtaining the products again, run the script `./scripts/07_zonal_stats_and_run.py` (it's the same than the previous one), I added just to avoid confusion between the steps, to follow a simple and clear workflow. The results will be stored in the `./real_case` folder, in a subfolder based on the name of the run.
+
+## Use duhamel routing to get streamflow from the modified forcing data (with HRRR injected)
+
+**One note**: streamflow here is computed in mm/hr, not in m3/s. The only reason is to easily compare different catchments. Also, the results of the `ngen` and `troute` are stores in `./real_case` folder (created in the same directory where the NGIAB are), and in a subfolder based on the name of the run.
+
+```
+uv run scripts/08_build_corrected_output.py 
+```
